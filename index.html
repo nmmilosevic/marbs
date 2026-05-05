@@ -1,92 +1,214 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marbella Creative</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <div class="logo">Marbella Creative</div>
-      <nav>
-        <a href="#">Home</a><a href="#">Work</a><a href="#">Services</a><a href="#">Packages</a><a href="#">Contact</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marbella Creative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">Marbella Creative</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="lang"><span class="active">EN</span><span>ES</span></div>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>We create content that makes Marbella brands stand out.</h1>
-      <p>Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.</p>
-      <div class="actions">
-        <button class="btn primary">View Packages →</button>
-        <button class="btn ghost">Start a Project</button>
+      <div class="language-switch" aria-label="Language">
+        <button class="active">EN</button>
+        <button>ES</button>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section class="section container">
-    <h2>Content that gets attention</h2>
-    <p class="muted">In Marbella, image matters. We create visuals, websites, and content that make people stop, look, and choose your business.</p>
-    <div class="gallery">
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    </div>
-  </section>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1>We create content that makes Marbella brands stand out.</h1>
+          <p>Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.</p>
+          <div class="button-row">
+            <a class="button primary" href="#packages">View Packages <span>+</span></a>
+            <a class="button secondary" href="#contact">Start a Project</a>
+          </div>
+        </div>
+      </section>
 
-  <section class="section alt">
-    <div class="container">
-      <h2>What we do</h2>
-      <div class="cards-2">
-        <article><h3>Social Media Content</h3><p>We create Instagram content that looks clean, stays consistent, and drives your brand active.</p></article>
-        <article><h3>Website Design Marbella</h3><p>Clean, modern websites built to convert visitors into clients.</p></article>
-        <article><h3>Photography &amp; Content Production</h3><p>Food, products, spaces, lifestyle. Real visuals for businesses that need to stand out.</p></article>
-        <article><h3>Print Design</h3><p>Menus, business cards, flyers. Everything aligned with your brand.</p></article>
-      </div>
-    </div>
-  </section>
+      <section id="work" class="section intro-section">
+        <div class="section-copy">
+          <h2>Content that gets attention</h2>
+          <p>In Marbella, image matters. We create visuals, websites, and content that make people stop, look, and choose your business.</p>
+        </div>
+        <div class="mosaic" aria-label="Restaurant, lifestyle, and hospitality content examples">
+          <div class="tile tile-burger"></div>
+          <div class="tile tile-shadows"></div>
+          <div class="tile tile-pasta"></div>
+          <div class="tile tile-bar"></div>
+          <div class="tile tile-steak"></div>
+          <div class="tile tile-terrace"></div>
+          <div class="tile tile-menu"></div>
+        </div>
+      </section>
 
-  <section class="section container">
-    <h2>Simple packages that work</h2>
-    <p class="muted">Clear offers. No complexity.</p>
-    <div class="pricing">
-      <article><h4>Launch</h4><p>For small businesses that need a clear foundation.</p><strong>€790 setup</strong><button class="btn primary">Get Started</button></article>
-      <article class="popular"><h4>Grow</h4><p>For businesses that want consistent visibility.</p><strong>€1,490 setup</strong><button class="btn primary">Most Popular</button></article>
-      <article><h4>Scale</h4><p>For brands that want full control of their image online.</p><strong>€2,490 setup</strong><button class="btn primary">Start Project</button></article>
-    </div>
-  </section>
+      <section id="services" class="section services">
+        <h2>What we do</h2>
+        <div class="service-grid">
+          <article class="service">
+            <span class="icon">◎</span>
+            <h3>Social Media Content</h3>
+            <p>We create Instagram content that looks sharp, stays consistent, and keeps your brand active.</p>
+          </article>
+          <article class="service">
+            <span class="icon">⊕</span>
+            <h3>Website Design Marbella</h3>
+            <p>Clean, modern websites built to convert visitors into clients.</p>
+          </article>
+          <article class="service">
+            <span class="icon">▣</span>
+            <h3>Photography &amp; Content Production</h3>
+            <p>Food, products, spaces, lifestyle. Real visuals for businesses that need to stand out.</p>
+          </article>
+          <article class="service">
+            <span class="icon">◇</span>
+            <h3>Print Design</h3>
+            <p>Menus, business cards, flyers. Everything aligned with your brand.</p>
+          </article>
+        </div>
+      </section>
 
-  <section class="section alt">
-    <div class="container">
-      <h2>How it works</h2>
-      <div class="steps"><div><span>01</span><h4>Plan</h4></div><div><span>02</span><h4>Create</h4></div><div><span>03</span><h4>Launch</h4></div><div><span>04</span><h4>Grow</h4></div></div>
-    </div>
-  </section>
+      <section id="packages" class="section packages">
+        <div class="section-copy">
+          <h2>Simple packages that work</h2>
+          <p>Clear offers. No complexity.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Launch</h3>
+            <p>For small businesses that need a clean presence fast.</p>
+            <strong>€790 setup</strong>
+            <span class="subprice">€390/month</span>
+            <ul>
+              <li>Brand or logo refresh</li>
+              <li>Basic visual direction</li>
+              <li>1 Instagram post per month</li>
+              <li>Landing page</li>
+              <li>Light copywriting</li>
+              <li>1 revision</li>
+            </ul>
+            <a class="button primary full" href="#contact">Get Started</a>
+          </article>
 
-  <section class="section cta">
-    <div class="container center">
-      <h2>Built for Marbella businesses</h2>
-      <p>Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.</p>
-      <button class="btn primary">Start your project →</button>
-    </div>
-  </section>
+          <article class="price-card featured">
+            <div class="badge">Most Popular</div>
+            <h3>Grow</h3>
+            <p>For businesses that want consistent visibility.</p>
+            <strong>€1,490 setup</strong>
+            <span class="subprice">€790/month</span>
+            <ul>
+              <li>Brand direction</li>
+              <li>10 Instagram posts per month</li>
+              <li>Story templates</li>
+              <li>5 page website</li>
+              <li>Print basics</li>
+              <li>2 revisions</li>
+            </ul>
+            <a class="button light full" href="#contact">Most Popular</a>
+          </article>
 
-  <section class="section container contact">
-    <div>
-      <h2>Let's build something that gets you noticed</h2>
-      <p class="muted">Tell us about your project and we'll come back with a clear plan.</p>
-    </div>
-    <form>
-      <input placeholder="Your Name"/>
-      <input placeholder="you@email.com"/>
-      <textarea placeholder="Tell us about your project..."></textarea>
-      <button class="btn primary">Send Message →</button>
-    </form>
-  </section>
-</body>
+          <article class="price-card">
+            <h3>Scale</h3>
+            <p>For brands that want full control of their image.</p>
+            <strong>€2,490 setup</strong>
+            <span class="subprice">€1,490/month</span>
+            <ul>
+              <li>Everything branded daily, done for you</li>
+              <li>Full creative direction</li>
+              <li>20 content assets per month</li>
+              <li>Monthly content shoot</li>
+              <li>Website up to 8 pages</li>
+              <li>Print design pack</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="button primary full" href="#contact">Start Project</a>
+          </article>
+        </div>
+        <p class="note">No long-term contract · Limited availability</p>
+      </section>
+
+      <section class="section process">
+        <h2>How it works</h2>
+        <div class="process-grid">
+          <article>
+            <span>01</span>
+            <h3>Plan</h3>
+            <p>We understand your business and define what you need.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Create</h3>
+            <p>We design your content, visuals, and website.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Launch</h3>
+            <p>Everything goes live, clean and ready.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Grow</h3>
+            <p>We improve and scale your presence.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <h2>Built for Marbella businesses</h2>
+        <p>Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.</p>
+        <a class="button primary" href="#contact">Start your project <span>+</span></a>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="contact-copy">
+          <h2>Let's build something that gets you noticed</h2>
+          <p>Tell us about your project and we'll come back with a clear plan.</p>
+          <div class="contact-details">
+            <span>Email</span>
+            <a href="mailto:hello@marbellacreative.com">hello@marbellacreative.com</a>
+            <span>Phone</span>
+            <a href="tel:+34600000000">+34 600 000 000</a>
+            <span>WhatsApp</span>
+            <a href="tel:+34600000000">+34 600 000 000</a>
+          </div>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <form class="contact-form">
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Your Name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="your@email.com" />
+          </label>
+          <label>
+            <span>Project</span>
+            <textarea name="project" placeholder="Tell us about your project..."></textarea>
+          </label>
+          <button class="button primary full" type="submit">Send Message <span>+</span></button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Marbella Creative Agency</span>
+      <span>Based in Marbella, Spain</span>
+    </footer>
+  </body>
 </html>
