@@ -199,9 +199,23 @@ h1 {
   font-weight: 500;
 }
 
+.hero h1 {
+  display: grid;
+  justify-items: center;
+}
+
+.hero h1 > span {
+  display: block;
+}
+
+.city-phrase {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .city-rotator {
   display: inline-block;
-  min-width: 0;
+  min-width: 5.95em;
   color: #fff;
   transform-origin: 50% 60%;
   transition:
