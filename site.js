@@ -78,7 +78,7 @@
       title: "Marbella Creative",
       navLabel: "Primary navigation",
       nav: ["Home", "Work", "Services", "Packages", "Contact"],
-      heroTitle: `<span>We create content</span><span>that makes</span><span class="city-phrase">${cityRotator()} brands</span><span>stand out.</span>`,
+      heroTitle: `<span>We create content</span><span class="city-phrase">that makes ${cityRotator()}</span><span>brands stand out.</span>`,
       heroCopy:
         "Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.",
       heroPrimary: 'View Packages <span>+</span>',
