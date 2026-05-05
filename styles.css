@@ -172,9 +172,9 @@ a {
   aspect-ratio: 1.82;
   transform: translateX(-50%);
   filter: brightness(0.25) blur(1px) contrast(1.08) saturate(0.8);
-  opacity: 0.72;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 0 48%, transparent 78%);
-  mask-image: radial-gradient(ellipse at center, #000 0 48%, transparent 78%);
+  opacity: 0.82;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0 64%, transparent 88%);
+  mask-image: radial-gradient(ellipse at center, #000 0 64%, transparent 88%);
 }
 
 .hero-shot {
@@ -226,8 +226,9 @@ h1 {
 }
 
 .hero h1 {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero h1 > span {
@@ -235,13 +236,13 @@ h1 {
 }
 
 .city-phrase {
-  display: inline-block;
+  display: block;
   white-space: nowrap;
 }
 
 .city-rotator {
   display: inline-block;
-  min-width: 5.95em;
+  min-width: 0;
   color: #fff;
   transform-origin: 50% 60%;
   transition:
