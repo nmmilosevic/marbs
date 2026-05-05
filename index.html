@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marbella Creative</title>
+    <script>
+      document.documentElement.classList.add("motion-ready");
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header reveal" data-reveal="down">
       <a class="brand" href="#">Marbella Creative</a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#home">Home</a>
@@ -20,18 +23,18 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="language-switch" aria-label="Language">
-        <button class="active">EN</button>
-        <button>ES</button>
+        <button class="active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
       </div>
     </header>
 
     <main id="home">
       <section class="hero">
-        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="hero-photo reveal" data-reveal="photo" aria-hidden="true"></div>
         <div class="hero-content">
-          <h1>We create content that makes Marbella brands stand out.</h1>
-          <p>Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.</p>
-          <div class="button-row">
+          <h1 class="reveal" data-reveal="hero-title">We create content that makes Marbella brands stand out.</h1>
+          <p class="reveal" data-reveal="hero-copy">Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.</p>
+          <div class="button-row reveal" data-reveal="hero-actions">
             <a class="button primary" href="#packages">View Packages <span>+</span></a>
             <a class="button secondary" href="#contact">Start a Project</a>
           </div>
@@ -39,11 +42,11 @@
       </section>
 
       <section id="work" class="section intro-section">
-        <div class="section-copy">
+        <div class="section-copy reveal">
           <h2>Content that gets attention</h2>
           <p>In Marbella, image matters. We create visuals, websites, and content that make people stop, look, and choose your business.</p>
         </div>
-        <div class="mosaic" aria-label="Restaurant, lifestyle, and hospitality content examples">
+        <div class="mosaic reveal" data-reveal="image" aria-label="Restaurant, lifestyle, and hospitality content examples">
           <div class="tile tile-burger"></div>
           <div class="tile tile-shadows"></div>
           <div class="tile tile-pasta"></div>
@@ -55,24 +58,24 @@
       </section>
 
       <section id="services" class="section services">
-        <h2>What we do</h2>
+        <h2 class="reveal">What we do</h2>
         <div class="service-grid">
-          <article class="service">
+          <article class="service reveal">
             <span class="icon">◎</span>
             <h3>Social Media Content</h3>
             <p>We create Instagram content that looks sharp, stays consistent, and keeps your brand active.</p>
           </article>
-          <article class="service">
+          <article class="service reveal">
             <span class="icon">⊕</span>
             <h3>Website Design Marbella</h3>
             <p>Clean, modern websites built to convert visitors into clients.</p>
           </article>
-          <article class="service">
+          <article class="service reveal">
             <span class="icon">▣</span>
             <h3>Photography &amp; Content Production</h3>
             <p>Food, products, spaces, lifestyle. Real visuals for businesses that need to stand out.</p>
           </article>
-          <article class="service">
+          <article class="service reveal">
             <span class="icon">◇</span>
             <h3>Print Design</h3>
             <p>Menus, business cards, flyers. Everything aligned with your brand.</p>
@@ -81,12 +84,12 @@
       </section>
 
       <section id="packages" class="section packages">
-        <div class="section-copy">
+        <div class="section-copy reveal">
           <h2>Simple packages that work</h2>
           <p>Clear offers. No complexity.</p>
         </div>
         <div class="pricing-grid">
-          <article class="price-card">
+          <article class="price-card reveal">
             <h3>Launch</h3>
             <p>For small businesses that need a clean presence fast.</p>
             <strong>€790 setup</strong>
@@ -102,7 +105,7 @@
             <a class="button primary full" href="#contact">Get Started</a>
           </article>
 
-          <article class="price-card featured">
+          <article class="price-card featured reveal" data-reveal="featured">
             <div class="badge">Most Popular</div>
             <h3>Grow</h3>
             <p>For businesses that want consistent visibility.</p>
@@ -119,7 +122,7 @@
             <a class="button light full" href="#contact">Most Popular</a>
           </article>
 
-          <article class="price-card">
+          <article class="price-card reveal">
             <h3>Scale</h3>
             <p>For brands that want full control of their image.</p>
             <strong>€2,490 setup</strong>
@@ -136,28 +139,28 @@
             <a class="button primary full" href="#contact">Start Project</a>
           </article>
         </div>
-        <p class="note">No long-term contract · Limited availability</p>
+        <p class="note reveal">No long-term contract · Limited availability</p>
       </section>
 
       <section class="section process">
-        <h2>How it works</h2>
+        <h2 class="reveal">How it works</h2>
         <div class="process-grid">
-          <article>
+          <article class="reveal">
             <span>01</span>
             <h3>Plan</h3>
             <p>We understand your business and define what you need.</p>
           </article>
-          <article>
+          <article class="reveal">
             <span>02</span>
             <h3>Create</h3>
             <p>We design your content, visuals, and website.</p>
           </article>
-          <article>
+          <article class="reveal">
             <span>03</span>
             <h3>Launch</h3>
             <p>Everything goes live, clean and ready.</p>
           </article>
-          <article>
+          <article class="reveal">
             <span>04</span>
             <h3>Grow</h3>
             <p>We improve and scale your presence.</p>
@@ -166,13 +169,13 @@
       </section>
 
       <section class="section cta">
-        <h2>Built for Marbella businesses</h2>
-        <p>Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.</p>
-        <a class="button primary" href="#contact">Start your project <span>+</span></a>
+        <h2 class="reveal">Built for Marbella businesses</h2>
+        <p class="reveal">Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.</p>
+        <a class="button primary reveal" href="#contact">Start your project <span>+</span></a>
       </section>
 
       <section id="contact" class="section contact">
-        <div class="contact-copy">
+        <div class="contact-copy reveal">
           <h2>Let's build something that gets you noticed</h2>
           <p>Tell us about your project and we'll come back with a clear plan.</p>
           <div class="contact-details">
@@ -188,7 +191,7 @@
             <a href="#" aria-label="LinkedIn">in</a>
           </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form reveal" data-reveal="panel">
           <label>
             <span>Your Name</span>
             <input type="text" name="name" placeholder="Your Name" />
@@ -206,9 +209,326 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer reveal">
       <span>© 2026 Marbella Creative Agency</span>
       <span>Based in Marbella, Spain</span>
     </footer>
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealItems = Array.from(document.querySelectorAll(".reveal"));
+
+        revealItems.forEach((item, index) => {
+          item.style.setProperty("--reveal-order", index % 6);
+        });
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            rootMargin: "0px 0px -12% 0px",
+            threshold: 0.16,
+          }
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      })();
+
+      (() => {
+        const translations = {
+          en: {
+            title: "Marbella Creative",
+            navLabel: "Primary navigation",
+            nav: ["Home", "Work", "Services", "Packages", "Contact"],
+            heroTitle: "We create content that makes Marbella brands stand out.",
+            heroCopy:
+              "Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.",
+            heroPrimary: 'View Packages <span>+</span>',
+            heroSecondary: "Start a Project",
+            introTitle: "Content that gets attention",
+            introCopy:
+              "In Marbella, image matters. We create visuals, websites, and content that make people stop, look, and choose your business.",
+            mosaicLabel: "Restaurant, lifestyle, and hospitality content examples",
+            servicesTitle: "What we do",
+            services: [
+              {
+                title: "Social Media Content",
+                copy: "We create Instagram content that looks sharp, stays consistent, and keeps your brand active.",
+              },
+              {
+                title: "Website Design Marbella",
+                copy: "Clean, modern websites built to convert visitors into clients.",
+              },
+              {
+                title: "Photography & Content Production",
+                copy: "Food, products, spaces, lifestyle. Real visuals for businesses that need to stand out.",
+              },
+              {
+                title: "Print Design",
+                copy: "Menus, business cards, flyers. Everything aligned with your brand.",
+              },
+            ],
+            packagesTitle: "Simple packages that work",
+            packagesCopy: "Clear offers. No complexity.",
+            packages: [
+              {
+                title: "Launch",
+                copy: "For small businesses that need a clean presence fast.",
+                price: "€790 setup",
+                subprice: "€390/month",
+                items: ["Brand or logo refresh", "Basic visual direction", "1 Instagram post per month", "Landing page", "Light copywriting", "1 revision"],
+                button: "Get Started",
+              },
+              {
+                badge: "Most Popular",
+                title: "Grow",
+                copy: "For businesses that want consistent visibility.",
+                price: "€1,490 setup",
+                subprice: "€790/month",
+                items: ["Brand direction", "10 Instagram posts per month", "Story templates", "5 page website", "Print basics", "2 revisions"],
+                button: "Most Popular",
+              },
+              {
+                title: "Scale",
+                copy: "For brands that want full control of their image.",
+                price: "€2,490 setup",
+                subprice: "€1,490/month",
+                items: [
+                  "Everything branded daily, done for you",
+                  "Full creative direction",
+                  "20 content assets per month",
+                  "Monthly content shoot",
+                  "Website up to 8 pages",
+                  "Print design pack",
+                  "Priority support",
+                ],
+                button: "Start Project",
+              },
+            ],
+            note: "No long-term contract · Limited availability",
+            processTitle: "How it works",
+            process: [
+              { title: "Plan", copy: "We understand your business and define what you need." },
+              { title: "Create", copy: "We design your content, visuals, and website." },
+              { title: "Launch", copy: "Everything goes live, clean and ready." },
+              { title: "Grow", copy: "We improve and scale your presence." },
+            ],
+            ctaTitle: "Built for Marbella businesses",
+            ctaCopy:
+              "Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.",
+            ctaButton: 'Start your project <span>+</span>',
+            contactTitle: "Let's build something that gets you noticed",
+            contactCopy: "Tell us about your project and we'll come back with a clear plan.",
+            phone: "Phone",
+            formName: "Your Name",
+            formNamePlaceholder: "Your Name",
+            formProject: "Project",
+            formProjectPlaceholder: "Tell us about your project...",
+            formButton: 'Send Message <span>+</span>',
+            footerLocation: "Based in Marbella, Spain",
+          },
+          es: {
+            title: "Marbella Creative",
+            navLabel: "Navegación principal",
+            nav: ["Inicio", "Proyectos", "Servicios", "Paquetes", "Contacto"],
+            heroTitle: "Creamos contenido que hace destacar a las marcas de Marbella.",
+            heroCopy:
+              "Webs, redes sociales y visuales pensados para atraer más clientes a restaurantes, inmobiliarias y negocios locales en Marbella.",
+            heroPrimary: 'Ver paquetes <span>+</span>',
+            heroSecondary: "Empezar un proyecto",
+            introTitle: "Contenido que llama la atención",
+            introCopy:
+              "En Marbella, la imagen importa. Creamos visuales, webs y contenido que hacen que la gente se detenga, mire y elija tu negocio.",
+            mosaicLabel: "Ejemplos de contenido para restaurantes, estilo de vida y hostelería",
+            servicesTitle: "Qué hacemos",
+            services: [
+              {
+                title: "Contenido para redes sociales",
+                copy: "Creamos contenido para Instagram con una imagen cuidada, coherente y siempre activa.",
+              },
+              {
+                title: "Diseño web en Marbella",
+                copy: "Webs limpias y modernas creadas para convertir visitantes en clientes.",
+              },
+              {
+                title: "Fotografía y producción de contenido",
+                copy: "Comida, productos, espacios y estilo de vida. Visuales reales para negocios que necesitan destacar.",
+              },
+              {
+                title: "Diseño impreso",
+                copy: "Menús, tarjetas de visita y flyers. Todo alineado con tu marca.",
+              },
+            ],
+            packagesTitle: "Paquetes simples que funcionan",
+            packagesCopy: "Ofertas claras. Sin complicaciones.",
+            packages: [
+              {
+                title: "Launch",
+                copy: "Para pequeños negocios que necesitan una presencia limpia rápidamente.",
+                price: "€790 inicial",
+                subprice: "€390/mes",
+                items: ["Refresh de marca o logo", "Dirección visual básica", "1 post de Instagram al mes", "Landing page", "Copywriting ligero", "1 revisión"],
+                button: "Empezar",
+              },
+              {
+                badge: "Más popular",
+                title: "Grow",
+                copy: "Para negocios que quieren visibilidad constante.",
+                price: "€1,490 inicial",
+                subprice: "€790/mes",
+                items: ["Dirección de marca", "10 posts de Instagram al mes", "Plantillas para stories", "Web de 5 páginas", "Básicos de imprenta", "2 revisiones"],
+                button: "Más popular",
+              },
+              {
+                title: "Scale",
+                copy: "Para marcas que quieren control total de su imagen.",
+                price: "€2,490 inicial",
+                subprice: "€1,490/mes",
+                items: [
+                  "Todo tu branding diario, hecho por nosotros",
+                  "Dirección creativa completa",
+                  "20 piezas de contenido al mes",
+                  "Sesión mensual de contenido",
+                  "Web de hasta 8 páginas",
+                  "Pack de diseño impreso",
+                  "Soporte prioritario",
+                ],
+                button: "Iniciar proyecto",
+              },
+            ],
+            note: "Sin contrato a largo plazo · Disponibilidad limitada",
+            processTitle: "Cómo funciona",
+            process: [
+              { title: "Planificar", copy: "Entendemos tu negocio y definimos lo que necesitas." },
+              { title: "Crear", copy: "Diseñamos tu contenido, tus visuales y tu web." },
+              { title: "Lanzar", copy: "Todo sale online limpio y preparado." },
+              { title: "Crecer", copy: "Mejoramos y escalamos tu presencia." },
+            ],
+            ctaTitle: "Creado para negocios de Marbella",
+            ctaCopy:
+              "Restaurantes, beach clubs, inmobiliarias y marcas locales compiten por imagen. Te ayudamos a destacar con contenido y diseño que atrae clientes.",
+            ctaButton: 'Empezar tu proyecto <span>+</span>',
+            contactTitle: "Construyamos algo que haga que te vean",
+            contactCopy: "Cuéntanos tu proyecto y te responderemos con un plan claro.",
+            phone: "Teléfono",
+            formName: "Tu nombre",
+            formNamePlaceholder: "Tu nombre",
+            formProject: "Proyecto",
+            formProjectPlaceholder: "Cuéntanos tu proyecto...",
+            formButton: 'Enviar mensaje <span>+</span>',
+            footerLocation: "Con base en Marbella, España",
+          },
+        };
+
+        const setText = (selector, text) => {
+          const element = document.querySelector(selector);
+          if (element) element.textContent = text;
+        };
+
+        const setHtml = (selector, html) => {
+          const element = document.querySelector(selector);
+          if (element) element.innerHTML = html;
+        };
+
+        const setPlaceholder = (selector, placeholder) => {
+          const element = document.querySelector(selector);
+          if (element) element.placeholder = placeholder;
+        };
+
+        const applyLanguage = (language) => {
+          const copy = translations[language] || translations.en;
+          document.documentElement.lang = language;
+          document.title = copy.title;
+          document.querySelector(".nav-links")?.setAttribute("aria-label", copy.navLabel);
+          document.querySelector(".mosaic")?.setAttribute("aria-label", copy.mosaicLabel);
+
+          document.querySelectorAll(".language-switch button").forEach((button) => {
+            const isActive = button.dataset.lang === language;
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
+          });
+
+          document.querySelectorAll(".nav-links a").forEach((link, index) => {
+            link.textContent = copy.nav[index];
+          });
+
+          setText(".hero h1", copy.heroTitle);
+          setText(".hero p", copy.heroCopy);
+          setHtml(".button-row .primary", copy.heroPrimary);
+          setText(".button-row .secondary", copy.heroSecondary);
+          setText("#work h2", copy.introTitle);
+          setText("#work .section-copy p", copy.introCopy);
+          setText("#services h2", copy.servicesTitle);
+
+          document.querySelectorAll(".service").forEach((service, index) => {
+            setText(`.service:nth-child(${index + 1}) h3`, copy.services[index].title);
+            setText(`.service:nth-child(${index + 1}) p`, copy.services[index].copy);
+          });
+
+          setText("#packages .section-copy h2", copy.packagesTitle);
+          setText("#packages .section-copy p", copy.packagesCopy);
+          document.querySelectorAll(".price-card").forEach((card, index) => {
+            const packageCopy = copy.packages[index];
+            card.querySelector(".badge") && (card.querySelector(".badge").textContent = packageCopy.badge);
+            card.querySelector("h3").textContent = packageCopy.title;
+            card.querySelector("p").textContent = packageCopy.copy;
+            card.querySelector("strong").textContent = packageCopy.price;
+            card.querySelector(".subprice").textContent = packageCopy.subprice;
+            card.querySelectorAll("li").forEach((item, itemIndex) => {
+              item.textContent = packageCopy.items[itemIndex];
+            });
+            card.querySelector(".button").textContent = packageCopy.button;
+          });
+          setText(".note", copy.note);
+
+          setText(".process h2", copy.processTitle);
+          document.querySelectorAll(".process article").forEach((item, index) => {
+            item.querySelector("h3").textContent = copy.process[index].title;
+            item.querySelector("p").textContent = copy.process[index].copy;
+          });
+
+          setText(".cta h2", copy.ctaTitle);
+          setText(".cta p", copy.ctaCopy);
+          setHtml(".cta .button", copy.ctaButton);
+          setText(".contact-copy h2", copy.contactTitle);
+          setText(".contact-copy p", copy.contactCopy);
+          setText(".contact-details span:nth-of-type(2)", copy.phone);
+          setText(".contact-form label:nth-child(1) span", copy.formName);
+          setPlaceholder('input[name="name"]', copy.formNamePlaceholder);
+          setText(".contact-form label:nth-child(3) span", copy.formProject);
+          setPlaceholder('textarea[name="project"]', copy.formProjectPlaceholder);
+          setHtml(".contact-form button", copy.formButton);
+          setText(".footer span:last-child", copy.footerLocation);
+
+          try {
+            localStorage.setItem("marbella-language", language);
+          } catch (error) {
+            return;
+          }
+        };
+
+        document.querySelectorAll(".language-switch button").forEach((button) => {
+          button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+        });
+
+        let storedLanguage = "en";
+        try {
+          storedLanguage = localStorage.getItem("marbella-language") || "en";
+        } catch (error) {
+          storedLanguage = "en";
+        }
+        applyLanguage(storedLanguage);
+      })();
+    </script>
   </body>
 </html>

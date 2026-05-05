@@ -7,6 +7,10 @@
   --muted: #8b8b8b;
   --blue: #032cff;
   --blue-deep: #001bba;
+  --ease-apparition: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-polished: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-apparition: 780ms;
+  --duration-fast: 220ms;
 }
 
 * {
@@ -42,6 +46,57 @@ a {
   background: rgba(3, 3, 3, 0.92);
   border-bottom: 1px solid #111;
   backdrop-filter: blur(14px);
+}
+
+.motion-ready .reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0) scale(0.985);
+  filter: blur(12px);
+  transition:
+    opacity var(--duration-apparition) var(--ease-apparition),
+    transform var(--duration-apparition) var(--ease-apparition),
+    filter 620ms var(--ease-polished);
+  transition-delay: calc(var(--reveal-order, 0) * 44ms);
+  will-change: opacity, transform, filter;
+}
+
+.motion-ready .reveal[data-reveal="down"] {
+  transform: translate3d(0, -18px, 0) scale(0.99);
+}
+
+.motion-ready .reveal[data-reveal="photo"] {
+  transform: translateX(-50%) translate3d(0, -22px, 0) scale(1.035);
+}
+
+.motion-ready .reveal[data-reveal="hero-title"] {
+  transform: translate3d(0, 34px, 0) scale(0.975);
+}
+
+.motion-ready .reveal[data-reveal="hero-copy"],
+.motion-ready .reveal[data-reveal="hero-actions"] {
+  transform: translate3d(0, 18px, 0);
+}
+
+.motion-ready .reveal[data-reveal="image"] {
+  transform: translate3d(0, 34px, 0) scale(0.97);
+}
+
+.motion-ready .reveal[data-reveal="featured"] {
+  transform: translate3d(0, 30px, 0) scale(0.965);
+}
+
+.motion-ready .reveal[data-reveal="panel"] {
+  transform: translate3d(0, 28px, 0) scale(0.975);
+}
+
+.motion-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+.motion-ready .reveal[data-reveal="photo"].is-visible {
+  transform: translateX(-50%) translate3d(0, 0, 0) scale(1);
 }
 
 .brand {
@@ -163,7 +218,10 @@ h1 {
   border: 1px solid #242424;
   font-size: 12px;
   font-weight: 700;
-  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+  transition:
+    transform var(--duration-fast) var(--ease-polished),
+    background-color var(--duration-fast) var(--ease-polished),
+    border-color var(--duration-fast) var(--ease-polished);
 }
 
 .button:hover {
@@ -502,6 +560,32 @@ textarea {
 input:focus,
 textarea:focus {
   border-bottom-color: var(--blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .motion-ready .reveal,
+  .motion-ready .reveal[data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .motion-ready .reveal[data-reveal="photo"] {
+    transform: translateX(-50%);
+  }
 }
 
 .footer {
