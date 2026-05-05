@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marbella Creative</title>
+    <script>
+      document.documentElement.classList.add("motion-ready");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="packages">
+    <header class="site-header reveal" data-reveal="down">
+      <a class="brand" href="index.html">Marbella Creative</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="work.html" data-page="work">Work</a>
+        <a href="services.html" data-page="services">Services</a>
+        <a href="packages.html" data-page="packages">Packages</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button class="active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section id="packages" class="page-hero section">
+        <div class="page-kicker reveal" data-i18n="packages.kicker">Packages</div>
+        <div class="page-hero-grid">
+          <div class="reveal">
+            <h1 data-i18n="packages.title">Clear creative packages for different stages of visibility.</h1>
+          </div>
+          <div class="page-hero-copy reveal">
+            <p data-i18n="packages.copy">The home page shows the prices. This page explains what each package is really for, what it includes, and when it makes sense to move up.</p>
+            <a class="button primary" href="contact.html" data-i18n-html="packages.cta">Choose with us <span>+</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section packages package-page">
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <h3>Launch</h3>
+            <p>For small businesses that need a clean presence fast.</p>
+            <strong>€790 setup</strong>
+            <span class="subprice">€390/month</span>
+            <ul>
+              <li>Brand or logo refresh</li>
+              <li>Basic visual direction</li>
+              <li>1 Instagram post per month</li>
+              <li>Landing page</li>
+              <li>Light copywriting</li>
+              <li>1 revision</li>
+            </ul>
+            <a class="button primary full" href="contact.html">Get Started</a>
+          </article>
+
+          <article class="price-card featured reveal" data-reveal="featured">
+            <div class="badge">Most Popular</div>
+            <h3>Grow</h3>
+            <p>For businesses that want consistent visibility.</p>
+            <strong>€1,490 setup</strong>
+            <span class="subprice">€790/month</span>
+            <ul>
+              <li>Brand direction</li>
+              <li>10 Instagram posts per month</li>
+              <li>Story templates</li>
+              <li>5 page website</li>
+              <li>Print basics</li>
+              <li>2 revisions</li>
+            </ul>
+            <a class="button light full" href="contact.html">Most Popular</a>
+          </article>
+
+          <article class="price-card reveal">
+            <h3>Scale</h3>
+            <p>For brands that want full control of their image.</p>
+            <strong>€2,490 setup</strong>
+            <span class="subprice">€1,490/month</span>
+            <ul>
+              <li>Everything branded daily, done for you</li>
+              <li>Full creative direction</li>
+              <li>20 content assets per month</li>
+              <li>Monthly content shoot</li>
+              <li>Website up to 8 pages</li>
+              <li>Print design pack</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="button primary full" href="contact.html">Start Project</a>
+          </article>
+        </div>
+        <p class="note reveal">No long-term contract · Limited availability</p>
+      </section>
+
+      <section class="section package-fit">
+        <div class="reveal">
+          <h2 data-i18n="packages.fitTitle">Which package fits?</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card reveal">
+            <span data-i18n="packages.fit1Kicker">Launch fits when</span>
+            <p data-i18n="packages.fit1Copy">You have no clear online presence, need one strong landing page, and want the brand to stop looking unfinished.</p>
+          </article>
+          <article class="fit-card reveal">
+            <span data-i18n="packages.fit2Kicker">Grow fits when</span>
+            <p data-i18n="packages.fit2Copy">You already have demand, but your content and website are inconsistent or not premium enough for Marbella clients.</p>
+          </article>
+          <article class="fit-card reveal">
+            <span data-i18n="packages.fit3Kicker">Scale fits when</span>
+            <p data-i18n="packages.fit3Copy">Your brand needs ongoing creative direction, monthly production, and enough assets to stay visible every week.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section editorial-split">
+        <div class="reveal">
+          <h2 data-i18n="packages.includeTitle">What is included in the way we work</h2>
+        </div>
+        <div class="stack-list reveal">
+          <div>
+            <strong data-i18n="packages.include1Title">A clear starting point</strong>
+            <p data-i18n="packages.include1Copy">We begin with the offer, the customer, the visual level, and the pages or assets that matter first.</p>
+          </div>
+          <div>
+            <strong data-i18n="packages.include2Title">A usable delivery</strong>
+            <p data-i18n="packages.include2Copy">You get the design, content, and files in practical formats for web, social, and print.</p>
+          </div>
+          <div>
+            <strong data-i18n="packages.include3Title">A simple monthly rhythm</strong>
+            <p data-i18n="packages.include3Copy">For recurring packages, we keep production predictable so your brand does not disappear after launch.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <h2 class="reveal" data-i18n="packages.finalTitle">Not sure which package is right?</h2>
+        <p class="reveal" data-i18n="packages.finalCopy">Send your current website or Instagram. We will tell you which stage you are in and what should be fixed first.</p>
+        <a class="button primary reveal" href="contact.html" data-i18n-html="packages.finalButton">Get a recommendation <span>+</span></a>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <span>© 2026 Marbella Creative Agency</span>
+      <span>Based in Marbella, Spain</span>
+    </footer>
+    <script src="site.js" defer></script>
+  </body>
+</html>

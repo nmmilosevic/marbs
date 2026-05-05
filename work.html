@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marbella Creative</title>
+    <script>
+      document.documentElement.classList.add("motion-ready");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="work">
+    <header class="site-header reveal" data-reveal="down">
+      <a class="brand" href="index.html">Marbella Creative</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="work.html" data-page="work">Work</a>
+        <a href="services.html" data-page="services">Services</a>
+        <a href="packages.html" data-page="packages">Packages</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button class="active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero section">
+        <div class="page-kicker reveal" data-i18n="work.kicker">Selected work</div>
+        <div class="page-hero-grid">
+          <div class="reveal">
+            <h1 data-i18n="work.title">Visual systems built for Marbella attention spans.</h1>
+          </div>
+          <div class="page-hero-copy reveal">
+            <p data-i18n="work.copy">The home page shows the mood. This page explains the method: every shoot, website, menu, and post is designed to make a local business easier to choose in a market where image moves fast.</p>
+            <a class="button primary" href="contact.html" data-i18n-html="work.cta">Plan a content system <span>+</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="section work-showcase">
+        <div class="mosaic reveal" data-reveal="image" aria-label="Restaurant, lifestyle, and hospitality content examples">
+          <div class="tile tile-burger"></div>
+          <div class="tile tile-shadows"></div>
+          <div class="tile tile-pasta"></div>
+          <div class="tile tile-bar"></div>
+          <div class="tile tile-steak"></div>
+          <div class="tile tile-terrace"></div>
+          <div class="tile tile-menu"></div>
+        </div>
+        <div class="insight-panel reveal" data-reveal="panel">
+          <span data-i18n="work.panelKicker">What the visuals do</span>
+          <h2 data-i18n="work.panelTitle">They create instant context.</h2>
+          <p data-i18n="work.panelCopy">A guest, buyer, or tourist should understand the level of the place before they read a sentence. We build image direction around lighting, texture, menu rhythm, social crops, and page hierarchy.</p>
+        </div>
+      </section>
+
+      <section class="section detail-grid">
+        <article class="detail-card reveal">
+          <span>01</span>
+          <h3 data-i18n="work.card1Title">Hospitality content</h3>
+          <p data-i18n="work.card1Copy">Food, interiors, staff moments, terraces, drinks, and lifestyle details shaped into a consistent monthly content bank.</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>02</span>
+          <h3 data-i18n="work.card2Title">Real estate visuals</h3>
+          <p data-i18n="work.card2Copy">Property pages, neighborhood storytelling, agent content, and premium assets for listings that need to feel credible fast.</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>03</span>
+          <h3 data-i18n="work.card3Title">Launch kits</h3>
+          <p data-i18n="work.card3Copy">Logo refresh, landing page, social templates, print basics, and the core copy needed to start selling clearly.</p>
+        </article>
+      </section>
+
+      <section class="section editorial-split">
+        <div class="reveal">
+          <h2 data-i18n="work.splitTitle">Designed as a repeatable asset, not a one-time post.</h2>
+        </div>
+        <div class="stack-list reveal">
+          <div>
+            <strong data-i18n="work.list1Title">Shoot once, use everywhere</strong>
+            <p data-i18n="work.list1Copy">We plan crops for Instagram, website hero sections, ads, menus, Google profile images, and launch announcements.</p>
+          </div>
+          <div>
+            <strong data-i18n="work.list2Title">Make the brand recognizable</strong>
+            <p data-i18n="work.list2Copy">Color, contrast, framing, and copy stay consistent so the business becomes easier to remember.</p>
+          </div>
+          <div>
+            <strong data-i18n="work.list3Title">Keep it practical</strong>
+            <p data-i18n="work.list3Copy">Every asset is delivered in formats your team can actually publish without rebuilding the design each time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <h2 class="reveal" data-i18n="work.finalTitle">Have a place, product, or service that needs a sharper image?</h2>
+        <p class="reveal" data-i18n="work.finalCopy">Send us the business, the current channels, and the goal. We will map the content and page structure that makes sense first.</p>
+        <a class="button primary reveal" href="contact.html" data-i18n-html="work.finalButton">Start your project <span>+</span></a>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <span>© 2026 Marbella Creative Agency</span>
+      <span>Based in Marbella, Spain</span>
+    </footer>
+    <script src="site.js" defer></script>
+  </body>
+</html>

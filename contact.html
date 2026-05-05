@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marbella Creative</title>
+    <script>
+      document.documentElement.classList.add("motion-ready");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="contact">
+    <header class="site-header reveal" data-reveal="down">
+      <a class="brand" href="index.html">Marbella Creative</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="work.html" data-page="work">Work</a>
+        <a href="services.html" data-page="services">Services</a>
+        <a href="packages.html" data-page="packages">Packages</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button class="active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero section">
+        <div class="page-kicker reveal" data-i18n="contact.kicker">Contact</div>
+        <div class="page-hero-grid">
+          <div class="reveal">
+            <h1 data-i18n="contact.pageTitle">Tell us what needs to look sharper.</h1>
+          </div>
+          <div class="page-hero-copy reveal">
+            <p data-i18n="contact.pageCopy">Use this page to start the conversation properly. The better the context, the faster we can recommend the right creative direction, package, or first step.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact contact-page">
+        <div class="contact-copy reveal">
+          <h2>Let's build something that gets you noticed</h2>
+          <p>Tell us about your project and we'll come back with a clear plan.</p>
+          <div class="contact-details">
+            <span>Email</span>
+            <a href="mailto:hello@marbellacreative.com">hello@marbellacreative.com</a>
+            <span>Phone</span>
+            <a href="tel:+34600000000">+34 600 000 000</a>
+            <span>WhatsApp</span>
+            <a href="tel:+34600000000">+34 600 000 000</a>
+          </div>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <form class="contact-form reveal" data-reveal="panel">
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Your Name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="your@email.com" />
+          </label>
+          <label>
+            <span>Project</span>
+            <textarea name="project" placeholder="Tell us about your project..."></textarea>
+          </label>
+          <button class="button primary full" type="submit">Send Message <span>+</span></button>
+        </form>
+      </section>
+
+      <section class="section detail-grid contact-prompts">
+        <article class="detail-card reveal">
+          <span>01</span>
+          <h3 data-i18n="contact.prompt1Title">Send the current state</h3>
+          <p data-i18n="contact.prompt1Copy">Website, Instagram, menu, listing, or any material that shows where the brand is today.</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>02</span>
+          <h3 data-i18n="contact.prompt2Title">Explain the goal</h3>
+          <p data-i18n="contact.prompt2Copy">More bookings, a cleaner launch, better listings, stronger social presence, or a complete brand reset.</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>03</span>
+          <h3 data-i18n="contact.prompt3Title">Tell us the timing</h3>
+          <p data-i18n="contact.prompt3Copy">Launch dates, monthly content needs, event deadlines, or when the new website needs to go live.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <span>© 2026 Marbella Creative Agency</span>
+      <span>Based in Marbella, Spain</span>
+    </footer>
+    <script src="site.js" defer></script>
+  </body>
+</html>
