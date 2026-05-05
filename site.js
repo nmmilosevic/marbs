@@ -1,4 +1,16 @@
 (() => {
+  const cleanCurrentUrl = () => {
+    const url = new URL(window.location.href);
+    const cleanPath = url.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+
+    if (cleanPath !== url.pathname) {
+      url.pathname = cleanPath;
+      window.history.replaceState({}, "", url);
+    }
+  };
+
+  cleanCurrentUrl();
+
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealItems = Array.from(document.querySelectorAll(".reveal"));
 

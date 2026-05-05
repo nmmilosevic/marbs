@@ -11,6 +11,7 @@
   --ease-polished: cubic-bezier(0.22, 0.61, 0.36, 1);
   --duration-apparition: 780ms;
   --duration-fast: 220ms;
+  --content-max: 1200px;
 }
 
 * {
@@ -42,7 +43,7 @@ a {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   height: 64px;
-  padding: 0 clamp(20px, 12vw, 180px);
+  padding: 0 max(20px, calc((100vw - var(--content-max)) / 2));
   background: rgba(3, 3, 3, 0.92);
   border-bottom: 1px solid #111;
   backdrop-filter: blur(14px);
@@ -258,7 +259,7 @@ h1 {
 }
 
 .section {
-  width: min(980px, calc(100% - 40px));
+  width: min(var(--content-max), calc(100% - 40px));
   margin-inline: auto;
   padding: 128px 0;
 }
@@ -312,7 +313,7 @@ h1 {
 }
 
 .work-showcase {
-  width: min(1180px, calc(100% - 40px));
+  width: min(var(--content-max), calc(100% - 40px));
   align-items: center;
   padding-top: 72px;
 }
@@ -477,7 +478,7 @@ h2 {
 }
 
 .mosaic {
-  width: min(980px, 100%);
+  width: 100%;
   aspect-ratio: 980 / 850;
   background-image: url("assets/content-mosaic.png");
   background-position: center;
@@ -489,7 +490,7 @@ h2 {
 }
 
 .services {
-  width: min(990px, calc(100% - 40px));
+  width: min(var(--content-max), calc(100% - 40px));
 }
 
 .service-grid {
@@ -520,7 +521,7 @@ h2 {
 }
 
 .packages {
-  width: min(980px, calc(100% - 40px));
+  width: min(var(--content-max), calc(100% - 40px));
 }
 
 .pricing-grid {
@@ -663,7 +664,7 @@ li::before {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
   gap: 150px;
-  width: min(980px, calc(100% - 40px));
+  width: min(var(--content-max), calc(100% - 40px));
   padding-top: 136px;
   padding-bottom: 116px;
 }
@@ -780,7 +781,7 @@ textarea:focus {
 .footer {
   display: flex;
   justify-content: space-between;
-  width: min(980px, calc(100% - 40px));
+  width: min(var(--content-max), calc(100% - 40px));
   margin: 0 auto;
   padding: 48px 0 90px;
   color: #5a5a5a;
