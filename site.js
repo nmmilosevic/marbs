@@ -11,16 +11,13 @@
 
   cleanCurrentUrl();
 
-  const header = document.querySelector(".site-header");
   const updateHeaderState = () => {
+    const header = document.querySelector(".site-header");
     header?.classList.toggle("is-scrolled", window.scrollY > 8);
   };
 
-  updateHeaderState();
-  window.addEventListener("scroll", updateHeaderState, { passive: true });
-
-  const processSections = Array.from(document.querySelectorAll(".process"));
   const updateProcessStacks = () => {
+    const processSections = Array.from(document.querySelectorAll(".process"));
     processSections.forEach((section) => {
       const cards = Array.from(section.querySelectorAll(".process-grid article"));
       if (!cards.length) return;
@@ -40,36 +37,48 @@
     });
   };
 
-  updateProcessStacks();
-  window.addEventListener("scroll", updateProcessStacks, { passive: true });
+  let observer;
+  const initRevealItems = () => {
+    if (observer) observer.disconnect();
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const revealItems = Array.from(document.querySelectorAll(".reveal"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealItems = Array.from(document.querySelectorAll(".reveal"));
 
-  revealItems.forEach((item, index) => {
-    item.style.setProperty("--reveal-order", index % 6);
-  });
+    revealItems.forEach((item, index) => {
+      item.style.setProperty("--reveal-order", index % 6);
+    });
 
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      rootMargin: "0px 0px -12% 0px",
-      threshold: 0.16,
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
     }
-  );
 
-  revealItems.forEach((item) => observer.observe(item));
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.16,
+      }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+  };
+
+  window.marbsInitMotion = () => {
+    updateHeaderState();
+    updateProcessStacks();
+    initRevealItems();
+  };
+
+  window.marbsInitMotion();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+  window.addEventListener("scroll", updateProcessStacks, { passive: true });
 })();
 
 (() => {
@@ -183,9 +192,9 @@
         { title: "Launch", copy: "Everything goes live, clean and ready." },
         { title: "Grow", copy: "We improve and scale your presence." },
       ],
-      ctaTitle: "Built for Marbella businesses",
+      ctaTitle: `Built for <span class="city-phrase">${cityRotator()}</span> businesses`,
       ctaCopy:
-        "Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.",
+        "From Marbella to Estepona, Malaga, Fuengirola, Torremolinos, and Benalmadena, local brands compete on image. We help you stand out with content and design that attracts clients.",
       ctaButton: 'Start your project',
       contactTitle: "Let's build something that gets you noticed",
       contactCopy: "Tell us about your project and we'll come back with a clear plan.",
@@ -274,9 +283,9 @@
         { title: "Lanzar", copy: "Todo sale online limpio y preparado." },
         { title: "Crecer", copy: "Mejoramos y escalamos tu presencia." },
       ],
-      ctaTitle: "Creado para negocios de Marbella",
+      ctaTitle: `Creado para negocios en <span class="city-phrase">${cityRotator()}</span>`,
       ctaCopy:
-        "Restaurantes, beach clubs, inmobiliarias y marcas locales compiten por imagen. Te ayudamos a destacar con contenido y diseño que atrae clientes.",
+        "De Marbella a Estepona, Malaga, Fuengirola, Torremolinos y Benalmadena, las marcas locales compiten por imagen. Te ayudamos a destacar con contenido y diseño que atrae clientes.",
       ctaButton: 'Empezar tu proyecto',
       contactTitle: "Construyamos algo que haga que te vean",
       contactCopy: "Cuéntanos tu proyecto y te responderemos con un plan claro.",
@@ -569,7 +578,7 @@
       item.querySelector("p").textContent = copy.process[index].copy;
     });
 
-    setText(".cta h2", copy.ctaTitle);
+    setHtml(".cta h2", copy.ctaTitle);
     setText(".cta p", copy.ctaCopy);
     setHtml(".cta .button", copy.ctaButton);
     setText(".contact-copy h2", copy.contactTitle);
@@ -602,9 +611,11 @@
     }
   };
 
-  document.querySelectorAll(".language-switch button").forEach((button) => {
-    button.addEventListener("click", () => applyLanguage(button.dataset.lang));
-  });
+  const initLanguageControls = () => {
+    document.querySelectorAll(".language-switch button").forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+  };
 
   let storedLanguage = "en";
   try {
@@ -613,5 +624,98 @@
     storedLanguage = "en";
   }
 
+  window.marbsApplyLanguage = applyLanguage;
+  window.marbsInitLanguageControls = initLanguageControls;
+
+  initLanguageControls();
   applyLanguage(storedLanguage);
+})();
+
+(() => {
+  const pageCache = new Map();
+
+  const isInternalPageLink = (url) => {
+    if (!url || url.origin !== window.location.origin) return false;
+    if (url.hash) return false;
+    return ["/", "/index.html", "/work", "/work.html", "/services", "/services.html", "/packages", "/packages.html", "/contact", "/contact.html"].some((path) =>
+      url.pathname.endsWith(path)
+    );
+  };
+
+  const cleanPath = (url) => url.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+
+  const fetchPath = (url) => {
+    if (url.pathname.endsWith("/") || url.pathname.endsWith(".html")) return url.href;
+    const fetchUrl = new URL(url.href);
+    fetchUrl.pathname = `${fetchUrl.pathname}.html`;
+    return fetchUrl.href;
+  };
+
+  const loadPage = async (url) => {
+    const key = cleanPath(url);
+    if (!pageCache.has(key)) {
+      const response = await fetch(fetchPath(url), { headers: { "X-Requested-With": "MarbellaNavigation" } });
+      if (!response.ok) throw new Error(`Failed to load ${url.pathname}`);
+      const html = await response.text();
+      pageCache.set(key, new DOMParser().parseFromString(html, "text/html"));
+    }
+
+    return pageCache.get(key).cloneNode(true);
+  };
+
+  const swapPage = async (url, push = true) => {
+    const nextDocument = await loadPage(url);
+    const nextMain = nextDocument.querySelector("main");
+    const currentMain = document.querySelector("main");
+
+    if (!nextMain || !currentMain) {
+      window.location.href = url.href;
+      return;
+    }
+
+    const updateDom = () => {
+      currentMain.replaceWith(nextMain);
+      document.body.dataset.page = nextDocument.body.dataset.page || "home";
+      if (push) window.history.pushState({}, "", cleanPath(url) || "/");
+      window.scrollTo({ top: 0, behavior: "auto" });
+      window.marbsInitMotion?.();
+      window.marbsApplyLanguage?.(localStorage.getItem("marbella-language") || document.documentElement.lang || "en");
+    };
+
+    if (document.startViewTransition) {
+      document.startViewTransition(updateDom);
+    } else {
+      updateDom();
+    }
+  };
+
+  const warmPage = (url) => {
+    loadPage(url).catch(() => {});
+  };
+
+  document.addEventListener("pointerenter", (event) => {
+    const anchor = event.target.closest?.("a");
+    if (!anchor) return;
+    const url = new URL(anchor.href);
+    if (isInternalPageLink(url)) warmPage(url);
+  }, true);
+
+  document.addEventListener("click", (event) => {
+    const anchor = event.target.closest?.("a");
+    if (!anchor || anchor.target || anchor.hasAttribute("download") || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+
+    const url = new URL(anchor.href);
+    if (!isInternalPageLink(url)) return;
+
+    event.preventDefault();
+    swapPage(url).catch(() => {
+      window.location.href = url.href;
+    });
+  });
+
+  window.addEventListener("popstate", () => {
+    swapPage(new URL(window.location.href), false).catch(() => {
+      window.location.reload();
+    });
+  });
 })();
