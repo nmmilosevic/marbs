@@ -176,7 +176,9 @@ a {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.42) 0%,
+    var(--bg) 0%,
+    rgba(2, 3, 3, 0.9) 6%,
+    rgba(0, 0, 0, 0.42) 18%,
     rgba(0, 0, 0, 0.5) 52%,
     rgba(0, 0, 0, 0.86) 70%,
     var(--bg) 86%
@@ -204,7 +206,7 @@ a {
 
 .hero-photo {
   position: absolute;
-  top: -120px;
+  top: -190px;
   left: 50%;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr 0.9fr;
