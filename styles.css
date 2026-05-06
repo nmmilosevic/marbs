@@ -159,12 +159,12 @@ a {
 
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: calc(100dvh - 64px);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(145px, 18vh, 188px) 0 118px;
+  padding: 0 0 32px;
   text-align: center;
   background: radial-gradient(circle at center top, #250407 0, #090305 43%, #030303 76%);
 }
@@ -194,20 +194,20 @@ a {
   background: linear-gradient(
     90deg,
     var(--bg) 0%,
-    rgba(2, 3, 3, 0.98) 8%,
-    rgba(2, 3, 3, 0.74) 17%,
-    rgba(2, 3, 3, 0) 31%,
-    rgba(2, 3, 3, 0) 69%,
-    rgba(2, 3, 3, 0.74) 83%,
-    rgba(2, 3, 3, 0.98) 92%,
+    rgba(2, 3, 3, 0.94) 7%,
+    rgba(2, 3, 3, 0.58) 16%,
+    rgba(2, 3, 3, 0) 30%,
+    rgba(2, 3, 3, 0) 70%,
+    rgba(2, 3, 3, 0.5) 84%,
+    rgba(2, 3, 3, 0.92) 93%,
     var(--bg) 100%
   );
 }
 
 .hero-photo {
   position: absolute;
-  top: -190px;
-  left: 50%;
+  top: -168px;
+  left: 49.3%;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr 0.9fr;
   grid-template-rows: 0.85fr 1fr;
@@ -1056,8 +1056,8 @@ textarea:focus {
   }
 
   .hero {
-    min-height: 620px;
-    padding: 132px 0 86px;
+    min-height: calc(100dvh - 106px);
+    padding: 0 0 38px;
   }
 
   .hero-content {
