@@ -160,10 +160,10 @@ a {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.48) 48%,
-    rgba(2, 3, 3, 0.88) 76%,
-    var(--bg) 94%
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.5) 52%,
+    rgba(0, 0, 0, 0.82) 74%,
+    var(--bg) 92%
   );
 }
 
@@ -176,26 +176,26 @@ a {
   background: linear-gradient(
     90deg,
     var(--bg) 0%,
-    rgba(2, 3, 3, 0.98) 5%,
-    rgba(2, 3, 3, 0.72) 13%,
-    rgba(2, 3, 3, 0) 27%,
-    rgba(2, 3, 3, 0) 73%,
-    rgba(2, 3, 3, 0.72) 87%,
-    rgba(2, 3, 3, 0.98) 95%,
+    rgba(2, 3, 3, 0.98) 8%,
+    rgba(2, 3, 3, 0.74) 17%,
+    rgba(2, 3, 3, 0) 31%,
+    rgba(2, 3, 3, 0) 69%,
+    rgba(2, 3, 3, 0.74) 83%,
+    rgba(2, 3, 3, 0.98) 92%,
     var(--bg) 100%
   );
 }
 
 .hero-photo {
   position: absolute;
-  top: -160px;
+  top: -120px;
   left: 50%;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr 0.9fr;
   grid-template-rows: 0.85fr 1fr;
   gap: 0;
-  width: min(1900px, 176vw);
-  aspect-ratio: 1.72;
+  width: min(1480px, 142vw);
+  aspect-ratio: 2.08;
   transform: translateX(-50%);
   filter: brightness(0.25) blur(1px) contrast(1.08) saturate(0.8);
   opacity: 0.82;
