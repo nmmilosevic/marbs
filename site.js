@@ -116,7 +116,7 @@
 
   const translations = {
     en: {
-      title: "Marbella Creative",
+      title: "N340",
       navLabel: "Primary navigation",
       nav: ["Home", "Work", "Services", "Packages", "Contact"],
       heroTitle: `<span>We create content</span><span class="city-phrase">that makes ${cityRotator()}</span><span>brands stand out.</span>`,
@@ -155,7 +155,7 @@
           copy: "For small businesses that need a clean presence fast.",
           price: "€790 setup",
           subprice: "€390/month",
-          items: ["Brand or logo refresh", "Basic visual direction", "1 Instagram post per month", "Landing page", "Light copywriting", "1 revision"],
+          items: ["Brand or logo refresh", "Basic visual direction", "1 Instagram post per month", "Landing page", "Hosting: €20/month", "Light copywriting", "1 revision"],
           button: "Get Started",
         },
         {
@@ -164,7 +164,7 @@
           copy: "For businesses that want consistent visibility.",
           price: "€1,490 setup",
           subprice: "€790/month",
-          items: ["Brand direction", "10 Instagram posts per month", "Story templates", "5 page website", "Print basics", "2 revisions"],
+          items: ["Brand direction", "10 Instagram posts per month", "Story templates", "5 page website", "Hosting: €20/month", "Print basics", "2 revisions"],
           button: "Most Popular",
         },
         {
@@ -178,6 +178,7 @@
             "20 content assets per month",
             "Monthly content shoot",
             "Website up to 8 pages",
+            "Hosting: €20/month",
             "Print design pack",
             "Priority support",
           ],
@@ -207,7 +208,7 @@
       footerLocation: "Based in Marbella, Spain",
     },
     es: {
-      title: "Marbella Creative",
+      title: "N340",
       navLabel: "Navegación principal",
       nav: ["Inicio", "Proyectos", "Servicios", "Paquetes", "Contacto"],
       heroTitle: `<span>Creamos contenido</span><span>que hace destacar</span><span>a las marcas de</span><span class="city-phrase">${cityRotator()}.</span>`,
@@ -246,7 +247,7 @@
           copy: "Para pequeños negocios que necesitan una presencia limpia rápidamente.",
           price: "€790 inicial",
           subprice: "€390/mes",
-          items: ["Refresh de marca o logo", "Dirección visual básica", "1 post de Instagram al mes", "Landing page", "Copywriting ligero", "1 revisión"],
+          items: ["Refresh de marca o logo", "Dirección visual básica", "1 post de Instagram al mes", "Landing page", "Alojamiento: €20/mes", "Copywriting ligero", "1 revisión"],
           button: "Empezar",
         },
         {
@@ -255,7 +256,7 @@
           copy: "Para negocios que quieren visibilidad constante.",
           price: "€1,490 inicial",
           subprice: "€790/mes",
-          items: ["Dirección de marca", "10 posts de Instagram al mes", "Plantillas para stories", "Web de 5 páginas", "Básicos de imprenta", "2 revisiones"],
+          items: ["Dirección de marca", "10 posts de Instagram al mes", "Plantillas para stories", "Web de 5 páginas", "Alojamiento: €20/mes", "Básicos de imprenta", "2 revisiones"],
           button: "Más popular",
         },
         {
@@ -269,6 +270,7 @@
             "20 piezas de contenido al mes",
             "Sesión mensual de contenido",
             "Web de hasta 8 páginas",
+            "Alojamiento: €20/mes",
             "Pack de diseño impreso",
             "Soporte prioritario",
           ],

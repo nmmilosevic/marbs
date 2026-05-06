@@ -26,8 +26,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Space Grotesk", Arial, sans-serif;
-  font-weight: 300;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-weight: 200;
   letter-spacing: 0;
 }
 
@@ -116,7 +116,7 @@ a {
 }
 
 .brand {
-  font-family: Syne, "Space Grotesk", Arial, sans-serif;
+  font-family: Syne, "DM Sans", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
@@ -126,7 +126,7 @@ a {
   gap: 30px;
   color: #9a9a9a;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
 }
 
 .nav-links a:hover {
@@ -260,7 +260,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: Syne, "Space Grotesk", Arial, sans-serif;
+  font-family: Syne, "DM Sans", Arial, sans-serif;
   font-weight: 400;
 }
 
@@ -729,6 +729,10 @@ h2 {
 .price-card.featured {
   background: var(--blue);
   border-color: var(--blue);
+  min-height: 506px;
+  transform: translateY(-18px);
+  box-shadow: 0 28px 90px rgba(3, 44, 255, 0.28);
+  z-index: 2;
 }
 
 .badge {
@@ -901,7 +905,7 @@ li::before {
   background:
     linear-gradient(90deg, #020303 0%, rgba(2, 3, 3, 0.72) 18%, rgba(2, 3, 3, 0.42) 50%, rgba(2, 3, 3, 0.72) 82%, #020303 100%),
     linear-gradient(180deg, #020303 0%, rgba(2, 3, 3, 0.4) 26%, rgba(2, 3, 3, 0.36) 70%, #020303 100%),
-    url("assets/cta-coast-villa.png") center / cover no-repeat;
+    url("assets/cta-villa-pool.png") center / cover no-repeat;
 }
 
 .cta::before {
@@ -1189,6 +1193,11 @@ textarea:focus {
 
   .price-card {
     min-height: auto;
+  }
+
+  .price-card.featured {
+    min-height: auto;
+    transform: none;
   }
 
   .contact {
