@@ -11,6 +11,38 @@
 
   cleanCurrentUrl();
 
+  const header = document.querySelector(".site-header");
+  const updateHeaderState = () => {
+    header?.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+  const processSections = Array.from(document.querySelectorAll(".process"));
+  const updateProcessStacks = () => {
+    processSections.forEach((section) => {
+      const cards = Array.from(section.querySelectorAll(".process-grid article"));
+      if (!cards.length) return;
+
+      let currentIndex = 0;
+      cards.forEach((card, index) => {
+        const trigger = 112 + index * 18;
+        if (card.getBoundingClientRect().top <= trigger) {
+          currentIndex = index;
+        }
+      });
+
+      cards.forEach((card, index) => {
+        card.classList.toggle("is-current", index === currentIndex);
+        card.classList.toggle("is-past", index < currentIndex);
+      });
+    });
+  };
+
+  updateProcessStacks();
+  window.addEventListener("scroll", updateProcessStacks, { passive: true });
+
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealItems = Array.from(document.querySelectorAll(".reveal"));
 
@@ -81,7 +113,7 @@
       heroTitle: `<span>We create content</span><span class="city-phrase">that makes ${cityRotator()}</span><span>brands stand out.</span>`,
       heroCopy:
         "Websites, social media, and visuals designed to attract more clients for restaurants, real estate, and local businesses in Marbella.",
-      heroPrimary: 'View Packages <span>+</span>',
+      heroPrimary: 'View Packages',
       heroSecondary: "Start a Project",
       introTitle: "Content that gets attention",
       introCopy:
@@ -154,7 +186,7 @@
       ctaTitle: "Built for Marbella businesses",
       ctaCopy:
         "Restaurants, beach clubs, real estate, and local brands all compete on image here. We help you stand out with content and design that attracts clients.",
-      ctaButton: 'Start your project <span>+</span>',
+      ctaButton: 'Start your project',
       contactTitle: "Let's build something that gets you noticed",
       contactCopy: "Tell us about your project and we'll come back with a clear plan.",
       phone: "Phone",
@@ -162,7 +194,7 @@
       formNamePlaceholder: "Your Name",
       formProject: "Project",
       formProjectPlaceholder: "Tell us about your project...",
-      formButton: 'Send Message <span>+</span>',
+      formButton: 'Send Message',
       footerLocation: "Based in Marbella, Spain",
     },
     es: {
@@ -172,7 +204,7 @@
       heroTitle: `<span>Creamos contenido</span><span>que hace destacar</span><span>a las marcas de</span><span class="city-phrase">${cityRotator()}.</span>`,
       heroCopy:
         "Webs, redes sociales y visuales pensados para atraer más clientes a restaurantes, inmobiliarias y negocios locales en Marbella.",
-      heroPrimary: 'Ver paquetes <span>+</span>',
+      heroPrimary: 'Ver paquetes',
       heroSecondary: "Empezar un proyecto",
       introTitle: "Contenido que llama la atención",
       introCopy:
@@ -245,7 +277,7 @@
       ctaTitle: "Creado para negocios de Marbella",
       ctaCopy:
         "Restaurantes, beach clubs, inmobiliarias y marcas locales compiten por imagen. Te ayudamos a destacar con contenido y diseño que atrae clientes.",
-      ctaButton: 'Empezar tu proyecto <span>+</span>',
+      ctaButton: 'Empezar tu proyecto',
       contactTitle: "Construyamos algo que haga que te vean",
       contactCopy: "Cuéntanos tu proyecto y te responderemos con un plan claro.",
       phone: "Teléfono",
@@ -253,7 +285,7 @@
       formNamePlaceholder: "Tu nombre",
       formProject: "Proyecto",
       formProjectPlaceholder: "Cuéntanos tu proyecto...",
-      formButton: 'Enviar mensaje <span>+</span>',
+      formButton: 'Enviar mensaje',
       footerLocation: "Con base en Marbella, España",
     },
   };
@@ -263,7 +295,7 @@
       "work.kicker": "Selected work",
       "work.title": "Visual systems built for Marbella attention spans.",
       "work.copy": "The home page shows the mood. This page explains the method: every shoot, website, menu, and post is designed to make a local business easier to choose in a market where image moves fast.",
-      "work.cta": 'Plan a content system <span>+</span>',
+      "work.cta": 'Plan a content system',
       "work.panelKicker": "What the visuals do",
       "work.panelTitle": "They create instant context.",
       "work.panelCopy": "A guest, buyer, or tourist should understand the level of the place before they read a sentence. We build image direction around lighting, texture, menu rhythm, social crops, and page hierarchy.",
@@ -282,11 +314,11 @@
       "work.list3Copy": "Every asset is delivered in formats your team can actually publish without rebuilding the design each time.",
       "work.finalTitle": "Have a place, product, or service that needs a sharper image?",
       "work.finalCopy": "Send us the business, the current channels, and the goal. We will map the content and page structure that makes sense first.",
-      "work.finalButton": 'Start your project <span>+</span>',
+      "work.finalButton": 'Start your project',
       "services.kicker": "Services",
       "services.title": "Creative services that connect the whole brand.",
       "services.copy": "The home page lists what we do. This page explains how each service fits together: content, website, photography, and print are planned as one customer journey.",
-      "services.cta": 'Compare packages <span>+</span>',
+      "services.cta": 'Compare packages',
       "services.card1Title": "Social Media Content",
       "services.card1Copy": "Monthly content built around what your audience needs to see before they book, visit, call, or enquire.",
       "services.card1Item1": "Instagram posts and stories",
@@ -318,11 +350,11 @@
       "services.process4Copy": "We adjust based on the real use: what is published, what converts, and what the team needs next.",
       "services.finalTitle": "Need one service or the whole system?",
       "services.finalCopy": "We can start with one clear priority, then expand into the rest of the brand when the foundation is right.",
-      "services.finalButton": 'Ask for a service plan <span>+</span>',
+      "services.finalButton": 'Ask for a service plan',
       "packages.kicker": "Packages",
       "packages.title": "Clear creative packages for different stages of visibility.",
       "packages.copy": "The home page shows the prices. This page explains what each package is really for, what it includes, and when it makes sense to move up.",
-      "packages.cta": 'Choose with us <span>+</span>',
+      "packages.cta": 'Choose with us',
       "packages.fitTitle": "Which package fits?",
       "packages.fit1Kicker": "Launch fits when",
       "packages.fit1Copy": "You have no clear online presence, need one strong landing page, and want the brand to stop looking unfinished.",
@@ -339,7 +371,7 @@
       "packages.include3Copy": "For recurring packages, we keep production predictable so your brand does not disappear after launch.",
       "packages.finalTitle": "Not sure which package is right?",
       "packages.finalCopy": "Send your current website or Instagram. We will tell you which stage you are in and what should be fixed first.",
-      "packages.finalButton": 'Get a recommendation <span>+</span>',
+      "packages.finalButton": 'Get a recommendation',
       "contact.kicker": "Contact",
       "contact.pageTitle": "Tell us what needs to look sharper.",
       "contact.pageCopy": "Use this page to start the conversation properly. The better the context, the faster we can recommend the right creative direction, package, or first step.",
@@ -354,7 +386,7 @@
       "work.kicker": "Trabajos seleccionados",
       "work.title": "Sistemas visuales creados para captar atención en Marbella.",
       "work.copy": "La home muestra el estilo. Esta página explica el método: cada sesión, web, menú y post está diseñado para que un negocio local sea más fácil de elegir en un mercado donde la imagen va rápido.",
-      "work.cta": 'Planificar un sistema de contenido <span>+</span>',
+      "work.cta": 'Planificar un sistema de contenido',
       "work.panelKicker": "Qué hacen los visuales",
       "work.panelTitle": "Crean contexto al instante.",
       "work.panelCopy": "Un cliente, comprador o turista debe entender el nivel del lugar antes de leer una frase. Construimos la dirección visual alrededor de luz, textura, ritmo de menú, formatos sociales y jerarquía web.",
@@ -373,11 +405,11 @@
       "work.list3Copy": "Cada activo se entrega en formatos que tu equipo puede publicar sin reconstruir el diseño cada vez.",
       "work.finalTitle": "¿Tienes un lugar, producto o servicio que necesita una imagen más fuerte?",
       "work.finalCopy": "Envíanos el negocio, los canales actuales y el objetivo. Primero mapearemos la estructura de contenido y página que tiene sentido.",
-      "work.finalButton": 'Empezar tu proyecto <span>+</span>',
+      "work.finalButton": 'Empezar tu proyecto',
       "services.kicker": "Servicios",
       "services.title": "Servicios creativos que conectan toda la marca.",
       "services.copy": "La home enumera lo que hacemos. Esta página explica cómo cada servicio encaja: contenido, web, fotografía e imprenta se planifican como un solo recorrido de cliente.",
-      "services.cta": 'Comparar paquetes <span>+</span>',
+      "services.cta": 'Comparar paquetes',
       "services.card1Title": "Contenido para redes sociales",
       "services.card1Copy": "Contenido mensual construido alrededor de lo que tu audiencia necesita ver antes de reservar, visitar, llamar o pedir información.",
       "services.card1Item1": "Posts y stories de Instagram",
@@ -409,11 +441,11 @@
       "services.process4Copy": "Ajustamos según el uso real: qué se publica, qué convierte y qué necesita el equipo después.",
       "services.finalTitle": "¿Necesitas un servicio o todo el sistema?",
       "services.finalCopy": "Podemos empezar con una prioridad clara y expandir el resto de la marca cuando la base esté bien.",
-      "services.finalButton": 'Pedir un plan de servicio <span>+</span>',
+      "services.finalButton": 'Pedir un plan de servicio',
       "packages.kicker": "Paquetes",
       "packages.title": "Paquetes creativos claros para distintas etapas de visibilidad.",
       "packages.copy": "La home muestra los precios. Esta página explica para qué sirve cada paquete, qué incluye y cuándo tiene sentido subir de nivel.",
-      "packages.cta": 'Elegir con nosotros <span>+</span>',
+      "packages.cta": 'Elegir con nosotros',
       "packages.fitTitle": "¿Qué paquete encaja?",
       "packages.fit1Kicker": "Launch encaja cuando",
       "packages.fit1Copy": "No tienes una presencia online clara, necesitas una landing sólida y quieres que la marca deje de parecer inacabada.",
@@ -430,7 +462,7 @@
       "packages.include3Copy": "En paquetes recurrentes, mantenemos una producción predecible para que la marca no desaparezca después del lanzamiento.",
       "packages.finalTitle": "¿No sabes qué paquete elegir?",
       "packages.finalCopy": "Envíanos tu web o Instagram actual. Te diremos en qué etapa estás y qué habría que arreglar primero.",
-      "packages.finalButton": 'Recibir una recomendación <span>+</span>',
+      "packages.finalButton": 'Recibir una recomendación',
       "contact.kicker": "Contacto",
       "contact.pageTitle": "Cuéntanos qué necesita verse mejor.",
       "contact.pageCopy": "Usa esta página para empezar bien la conversación. Cuanto mejor sea el contexto, antes podremos recomendar la dirección creativa, paquete o primer paso correcto.",
