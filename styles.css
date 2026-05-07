@@ -116,9 +116,13 @@ a {
 }
 
 .brand {
-  font-family: Syne, "DM Sans", Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 28px;
+  width: auto;
 }
 
 .nav-links {
@@ -150,7 +154,7 @@ a {
   background: transparent;
   color: #aaa;
   font: inherit;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .language-switch .active {
@@ -328,7 +332,7 @@ h1 {
   padding: 0 28px;
   border: 1px solid #242424;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 300;
   transition:
     transform var(--duration-fast) var(--ease-polished),
     background-color var(--duration-fast) var(--ease-polished),
@@ -651,7 +655,7 @@ h2 {
 
 .service-media {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 7;
   margin-bottom: 26px;
   background-position: center;
   background-size: cover;
@@ -682,7 +686,13 @@ h2 {
   line-height: 1;
 }
 
-.service h3,
+.service h3 {
+  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
 .price-card h3,
 .process h3 {
   margin-bottom: 14px;
@@ -690,7 +700,8 @@ h2 {
 }
 
 .service p {
-  font-size: 13px;
+  font-size: 13.5px;
+  line-height: 1.7;
 }
 
 .packages {
@@ -712,7 +723,7 @@ h2 {
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: start;
+  align-items: stretch;
   gap: 18px;
 }
 
@@ -728,8 +739,9 @@ h2 {
 }
 
 .price-card.featured {
-  min-height: 548px;
-  transform: translateY(-16px);
+  transform: translateY(-24px);
+  padding-top: 52px;
+  padding-bottom: 48px;
   border-color: rgba(3, 44, 255, 0.82);
   background:
     linear-gradient(180deg, rgba(3, 44, 255, 0.16), rgba(3, 44, 255, 0.04) 34%),
@@ -754,36 +766,53 @@ h2 {
   text-transform: uppercase;
 }
 
+.price-card h3 {
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
 .price-card p {
-  min-height: 76px;
-  margin-bottom: 22px;
+  margin-bottom: 0;
   font-size: 14px;
+  color: var(--muted);
 }
 
 .price-card.featured p,
-.price-card.featured .subprice,
 .price-card.featured li {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .price-card strong {
   display: block;
-  margin-bottom: 6px;
-  font-size: 30px;
-  line-height: 1.1;
+  padding: 24px 0;
+  font-size: 36px;
+  line-height: 1;
   font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.plus-prefix {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.price-note {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .subprice {
-  display: block;
-  margin-bottom: 28px;
-  color: #9a9a9a;
-  font-size: 14px;
+  display: none;
 }
 
 ul {
   flex: 1;
-  margin: 0 0 26px;
+  margin: 16px 0 26px;
   padding: 0;
   list-style: none;
 }
@@ -806,6 +835,7 @@ li::before {
 .featured li::before {
   color: #fff;
 }
+
 
 .note {
   max-width: 760px;
@@ -861,9 +891,20 @@ li::before {
   padding-bottom: 170px;
 }
 
-.process > h2 {
+.process-left {
   position: sticky;
   top: 118px;
+}
+
+.process-left h2 {
+  margin-bottom: 22px;
+}
+
+.process-subtitle {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
   margin-bottom: 0;
 }
 
@@ -875,7 +916,7 @@ li::before {
 
 .process-grid article {
   position: sticky;
-  min-height: 300px;
+  min-height: 340px;
   margin-bottom: 44px;
   padding: 42px;
   border: 1px solid var(--line);
@@ -918,9 +959,25 @@ li::before {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.process-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.process-icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  color: var(--blue);
+  opacity: 0.72;
+}
+
 .process span {
   display: block;
-  margin-bottom: 58px;
+  margin-bottom: 0;
   color: var(--blue);
   font-size: clamp(58px, 8vw, 104px);
   line-height: 0.8;
@@ -1165,13 +1222,18 @@ textarea:focus {
     padding-bottom: 84px;
   }
 
-  .process > h2,
+  .process-left,
   .process-grid article {
     position: static;
   }
 
-  .process > h2 {
+  .process-left {
     margin-bottom: 42px;
+  }
+
+  .process-subtitle {
+    max-width: 100%;
+    margin-top: 0;
   }
 
   .process-grid {
@@ -1189,8 +1251,11 @@ textarea:focus {
     transform: none;
   }
 
+  .process-card-header {
+    margin-bottom: 18px;
+  }
+
   .process span {
-    margin-bottom: 34px;
     font-size: 58px;
   }
 

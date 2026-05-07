@@ -151,48 +151,48 @@
       packagesCopy: "Easy to start. Easy to keep online.",
       packages: [
         {
-          title: "Starter Website",
-          copy: "For small businesses that need a clean online presence fast.",
-          price: "€290 setup",
-          subprice: "+ €39/month",
-          items: ["1-page website", "Mobile responsive design", "Contact form", "WhatsApp button", "Google Maps", "Basic SEO setup", "Hosting included", "1 small update per month"],
+          title: "Starter",
+          copy: "Clean 1-page website, live fast.",
+          price: "€290",
+          priceLabel: "one-time setup",
+          items: ["1-page website", "Mobile responsive design", "Contact form", "WhatsApp button", "Google Maps", "Basic SEO setup", "1 small update per month"],
           button: "Start simple",
+          priceNote: "+ Hosting €29/month (optional)",
         },
         {
           badge: "Most popular",
-          title: "Growth Website",
-          copy: "For restaurants, cafés, and local businesses that want to look more premium and generate more leads.",
-          price: "€590 setup",
-          subprice: "+ €79/month",
+          title: "Growth",
+          copy: "Multi-page site built to get more clients.",
+          price: "€590",
+          priceLabel: "one-time setup",
+          prefix: "Everything from Starter, plus:",
           items: [
             "Up to 5 pages",
             "Custom premium design",
             "Menu or services page",
             "Image gallery",
             "Instagram integration",
-            "Google Maps",
             "Local SEO setup",
-            "Hosting included",
-            "Monthly content updates",
           ],
           button: "Choose Growth",
+          priceNote: "+ Hosting €29/month (optional)",
         },
         {
-          title: "Premium Presence",
-          copy: "For premium restaurants, beach clubs, villas, real estate, and lifestyle brands.",
-          price: "€990 setup",
-          subprice: "+ €149/month",
+          title: "Premium",
+          copy: "Full custom experience for standout brands.",
+          price: "€990",
+          priceLabel: "one-time setup",
+          prefix: "Everything from Growth, plus:",
           items: [
-            "Full custom website",
             "Advanced visual direction",
             "Booking or request form",
             "Copywriting support",
             "Premium image direction",
             "Advanced SEO structure",
             "Priority support",
-            "Monthly improvements",
           ],
           button: "Go premium",
+          priceNote: "+ Hosting €29/month (optional)",
         },
       ],
       note: "Monthly plans include hosting, maintenance, basic support and small content updates. No technical stress, we keep your website live, fast and updated.",
@@ -262,48 +262,48 @@
       packagesCopy: "Fácil de empezar. Fácil de mantener online.",
       packages: [
         {
-          title: "Starter Website",
-          copy: "Para pequeños negocios que necesitan una presencia online limpia rápidamente.",
-          price: "€290 inicial",
-          subprice: "+ €39/mes",
-          items: ["Web de 1 página", "Diseño responsive móvil", "Formulario de contacto", "Botón de WhatsApp", "Google Maps", "SEO básico", "Alojamiento incluido", "1 pequeño cambio al mes"],
+          title: "Starter",
+          copy: "Web de 1 página, limpia y rápida.",
+          price: "€290",
+          priceLabel: "pago único",
+          items: ["Web de 1 página", "Diseño responsive móvil", "Formulario de contacto", "Botón de WhatsApp", "Google Maps", "SEO básico", "1 pequeño cambio al mes"],
           button: "Empezar simple",
+          priceNote: "+ Hosting €29/mes (opcional)",
         },
         {
           badge: "Más popular",
-          title: "Growth Website",
-          copy: "Para restaurantes, cafés y negocios locales que quieren verse más premium y recibir más contactos.",
-          price: "€590 inicial",
-          subprice: "+ €79/mes",
+          title: "Growth",
+          copy: "Web multipágina para conseguir más clientes.",
+          price: "€590",
+          priceLabel: "pago único",
+          prefix: "Todo lo de Starter, más:",
           items: [
             "Hasta 5 páginas",
             "Diseño premium personalizado",
             "Página de menú o servicios",
             "Galería de imágenes",
             "Integración de Instagram",
-            "Google Maps",
             "SEO local",
-            "Alojamiento incluido",
-            "Actualizaciones mensuales de contenido",
           ],
           button: "Elegir Growth",
+          priceNote: "+ Hosting €29/mes (opcional)",
         },
         {
-          title: "Premium Presence",
-          copy: "Para restaurantes premium, beach clubs, villas, inmobiliarias y marcas lifestyle.",
-          price: "€990 inicial",
-          subprice: "+ €149/mes",
+          title: "Premium",
+          copy: "Experiencia personalizada para marcas de alto nivel.",
+          price: "€990",
+          priceLabel: "pago único",
+          prefix: "Todo lo de Growth, más:",
           items: [
-            "Web totalmente personalizada",
             "Dirección visual avanzada",
             "Formulario de reserva o solicitud",
             "Apoyo de copywriting",
             "Dirección de imagen premium",
             "Estructura SEO avanzada",
             "Soporte prioritario",
-            "Mejoras mensuales",
           ],
           button: "Ir premium",
+          priceNote: "+ Hosting €29/mes (opcional)",
         },
       ],
       note: "Los planes mensuales incluyen alojamiento, mantenimiento, soporte básico y pequeños cambios de contenido. Sin estrés técnico: mantenemos tu web online, rápida y actualizada.",
@@ -602,13 +602,18 @@
       const badge = card.querySelector(".badge");
       if (badge) badge.textContent = packageCopy.badge;
       card.querySelector("h3").textContent = packageCopy.title;
-      card.querySelector("p").textContent = packageCopy.copy;
+      card.querySelectorAll("p:not(.price-note):not(.plus-prefix)")[0].textContent = packageCopy.copy;
+      const prefix = card.querySelector(".plus-prefix");
+      if (prefix) prefix.textContent = packageCopy.prefix || "";
       card.querySelector("strong").textContent = packageCopy.price;
-      card.querySelector(".subprice").textContent = packageCopy.subprice;
+      const priceLabel = card.querySelector(".price-label");
+      if (priceLabel) priceLabel.textContent = packageCopy.priceLabel;
       card.querySelectorAll("li").forEach((item, itemIndex) => {
         item.textContent = packageCopy.items[itemIndex];
       });
       card.querySelector(".button").textContent = packageCopy.button;
+      const priceNote = card.querySelector(".price-note");
+      if (priceNote) priceNote.textContent = packageCopy.priceNote;
     });
     setText(".note", copy.note);
     setText(".addons h3", copy.addonsTitle);
